@@ -10,6 +10,7 @@ let maskImg; // 用於存放面具圖片的變數
 function preload() {
   img = loadImage('3.png'); // 載入 3.png 圖片
   maskImg = loadImage('libraries/3.png'); // 載入面具圖片
+  console.log(maskImg); // 確認圖片是否成功載入 // 確認圖片是否成功載入
 }
 
 function setup() {
@@ -87,3 +88,4 @@ function draw() {
     }
   }
 }
+
