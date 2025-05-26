@@ -5,9 +5,11 @@ let predictions = [];
 let handPredictions = [];
 let targetPoint = 'forehead'; // 預設圓圈位置為額頭
 let img; // 用於存放 3.png 的變數
+let maskImg; // 用於存放面具圖片的變數
 
 function preload() {
   img = loadImage('3.png'); // 載入 3.png 圖片
+  maskImg = loadImage('libraries/3.png'); // 載入面具圖片
 }
 
 function setup() {
@@ -78,6 +80,7 @@ function draw() {
       targetPoint = 'forehead'; // 石頭 -> 額頭
     } else if (distanceThumbIndex > 50 && distanceIndexMiddle > 50) {
       targetPoint = 'leftEye'; // 剪刀 -> 左眼
+      image(maskImg, 200, 100, 200, 200); // 顯示面具圖片
     } else if (distanceThumbIndex > 50 && distanceIndexMiddle < 30) {
       targetPoint = 'rightCheek'; // 布 -> 右臉頰
       image(img, 10, 10, 100, 100); // 顯示 3.png 圖片
